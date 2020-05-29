@@ -30,6 +30,7 @@ jobs:
             PYTHONPATH=../charts/primehub/scripts/jupyterhub/config/ py.test --cov=. --cov-report html
             cd ../../ci
             ./test-cov.sh
+
   build:
     docker:
       # specify the version you desire here
