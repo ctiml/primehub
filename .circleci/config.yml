@@ -21,6 +21,9 @@ jobs:
             git submodule init && git submodule sync && git submodule update --init --recursive && git submodule status
             #apt-get update -qy
             #apt-get install -y python-dev python-pip jq
+            python3 -m venv .venv
+            source .venv/bin/activate
+
             cd chart
             pip install -r ../vendor/zero-to-jupyterhub-k8s/images/hub/requirements.txt --upgrade
             echo "=1=================="
