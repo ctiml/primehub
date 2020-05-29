@@ -30,10 +30,18 @@ jobs:
             pip install pytest-cov
             echo "=2=================="
             make test-html
+            ls -al htmlcov
+            echo "=3=================="
+            ls -al
             #cd ../../primehub-admission
             #pip install -r src/requirements.txt
-            #PYTHONPATH=../charts/primehub/scripts/jupyterhub/config/ py.test --cov=. --cov-report html
+            PYTHONPATH=./scripts/jupyterhub/config/ py.test --cov=. --cov-report html
+            echo "=4=================="
+            ls -al
             ../ci/test-cov.sh
+            mkdir -p /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
 
   build:
     docker:
