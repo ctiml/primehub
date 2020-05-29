@@ -70,9 +70,10 @@ workflows:
   release_builds:
     jobs:
       - unit_test
+
       # - build:
       #     filters:
       #       tags:
       #         only: /v.*/
       #       branches:
-              ignore: /.*/
+      #       ignore: /.*/
