@@ -26,20 +26,14 @@ jobs:
 
             cd chart
             pip install -r ../vendor/zero-to-jupyterhub-k8s/images/hub/requirements.txt --upgrade
-            echo "=1=================="
             pip install pytest-cov
-            echo "=2=================="
             make test-html
-            ls -al htmlcov
-            echo "=3=================="
-            ls -al
             #cd ../../primehub-admission
             #pip install -r src/requirements.txt
-            PYTHONPATH=./scripts/jupyterhub/config/ py.test --cov=. --cov-report html
-            echo "=4=================="
-            ls -al
+            #PYTHONPATH=./scripts/jupyterhub/config/ py.test --cov=. --cov-report html
             ../ci/test-cov.sh
             mkdir -p /tmp/artifacts
+            mv htmlcov /tmp/artifacts/
       - store_artifacts:
           path: /tmp/artifacts
 
