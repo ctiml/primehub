@@ -23,13 +23,15 @@ jobs:
             #apt-get install -y python-dev python-pip jq
             cd chart
             pip install -r ../vendor/zero-to-jupyterhub-k8s/images/hub/requirements.txt --upgrade
+            echo "=1=================="
             pip install pytest-cov
+            echo "=2=================="
             make test-html
-            cd ../../primehub-admission
-            pip install -r src/requirements.txt
-            PYTHONPATH=../charts/primehub/scripts/jupyterhub/config/ py.test --cov=. --cov-report html
-            cd ../../ci
-            ./test-cov.sh
+            #cd ../../primehub-admission
+            #pip install -r src/requirements.txt
+            #PYTHONPATH=../charts/primehub/scripts/jupyterhub/config/ py.test --cov=. --cov-report html
+            #cd ../../ci
+            #./test-cov.sh
 
   build:
     docker:
