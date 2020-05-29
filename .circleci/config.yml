@@ -33,8 +33,7 @@ jobs:
             #cd ../../primehub-admission
             #pip install -r src/requirements.txt
             #PYTHONPATH=../charts/primehub/scripts/jupyterhub/config/ py.test --cov=. --cov-report html
-            #cd ../../ci
-            #./test-cov.sh
+            ../ci/test-cov.sh
 
   build:
     docker:
